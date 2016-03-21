@@ -1,0 +1,33 @@
+ <!-- START PAGE SIDEBAR -->
+<div class="page-sidebar">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+        <!-- START LOGO -->
+        <li class="xn-logo">
+            <a href="index.html" style="background:#1d2127">Vitrual Storage</a>
+            <a href="#" class="x-navigation-control"></a>
+        </li>
+        <!-- END LOGO -->
+        {%for menu in menu_list%}
+            {%if menu.openable == False %}   
+                <li class="{{menu.active}}">
+            {% else %}
+                <li class="{{menu.active}} xn-openable">
+            {%endif%}
+
+            <a href="{{menu.url}}"><span class="fa {{menu.icon}}"></span> <span class="xn-text">{{menu.name}}</span></a>
+            {% if not menu.children|length_is:"0" %}
+                <ul>
+                    {%for sub_menu in menu.children%}
+                        <li class="{{sub_menu.active}}"><a href="{{sub_menu.url}}"><span class="fa {{sub_menu.icon}}"></span> <span>{{sub_menu.name}}</span></a></li>
+                    {%endfor%}
+                </ul>    
+            {% endif %}
+        </li>
+        {%endfor%}
+    </ul>
+    <!-- END X-NAVIGATION -->
+</div>
+<!-- END PAGE SIDEBAR -->
+
+
