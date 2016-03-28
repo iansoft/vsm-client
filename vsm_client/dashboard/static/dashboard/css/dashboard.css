@@ -16,3 +16,37 @@
 .informer-warning{
 	background:#fe970a !important;
 }
+
+.panel-title-box h3{
+	line-height: 24px !important;
+	font-size: 18px !important;
+}
+
+.panel-title-box span{
+	margin-left: 10px;
+}
+
+.panel .panel-footer {
+	line-height: 20px;
+}
+
+.label-warning2, .progress-bar-warning2{
+	background:#fe970a !important;
+}
+
+#tMDS{
+	text-align:center;border:0px;
+}
+
+#tMDS>tbody>tr>td{
+	border-top: 0px;
+}
+
+
+#dOSDCapacity{
+	margin: 10px;
+	float: left;
+	width:50%;
+	height:100px;
+	border-right:1px solid #ccc;
+}
