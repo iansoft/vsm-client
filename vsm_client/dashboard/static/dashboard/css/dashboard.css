@@ -46,7 +46,11 @@
 #dOSDCapacity{
 	margin: 10px;
 	float: left;
-	width:50%;
+	width:40%;
 	height:100px;
 	border-right:1px solid #ccc;
+}
+
+.label-quota{
+	font-size: 18px;
 }
