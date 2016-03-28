@@ -4,7 +4,108 @@
     Virtual Storage Management
 {% endblock %}
 
+{% block css %}
+    {{ block.super }}
+    {% load staticfiles %}
+    <link href="{% static "dashboard/css/dashboard.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block page-title %}
+    Overview
+{% endblock %}
+
 {% block content %}
     {{ block.super }}
-    Home Page
+    <div class="row">
+        <div  class="col-md-3">
+        	<!-- onclick="location.href='pages-messages.html';" -->
+        	<div id="dVSMStatus3" class="widget widget-default widget-item-icon" >
+        		<div class="widget-data">
+        			<a href="#" class="tile tile-default" style="text-decoration:none">
+		                234 days 12 hours
+		                <p>vsm-version:3.0 &nbsp&nbsp&nbsp ceph-version:0.8.0</p>
+		                <div class="informer informer-primary">03.26.16</div>
+		                <div class="informer informer-success dir-tr">
+		                	<span class="fa "></span>
+		                </div>
+		            </a>
+        		</div>
+        		<div class="widget-controls">                                
+                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                </div>
+        	</div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="widget widget-default widget-padding-sm">                            
+                <div class="widget-item-left">
+                    <div style="display:inline;width:100px;height:100px;">
+                    	<canvas width="100" height="100"></canvas>
+                    	<!-- <input class="knob" data-width="100" data-height="100" data-min="0" data-max="100" data-displayinput="false" data-bgcolor="#d6f4ff" data-fgcolor="#FFF" value="80%" data-readonly="true" data-thickness=".2" readonly="readonly" style="display: none; width: 0px; visibility: hidden;"> -->
+                    </div>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-big-int"><span class="num-count">80</span>%</div>
+                    <div class="widget-title">Disk Capacity</div>
+                    <div class="widget-subtitle">Total:2GB 123MB &nbsp&nbsp&nbsp Used:1GB 123MB</div>                          
+                </div> 
+                <div style="text-align:right;color:#ccc;padding-right:10px;">
+                    <span>2016-03-29 10:23:11</span>
+                </div>                           
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="widget widget-default widget-padding-sm">                            
+                <div class="widget-item-left">
+                    <div style="display:inline;width:100px;height:100px;">
+                    	<canvas width="100" height="100"></canvas>
+                    </div>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-big-int"><span class="num-count">30</span></div>
+                    <div class="widget-title">Storage Group Capacity</div>
+                    <div class="widget-subtitle">Health:20  &nbsp&nbsp&nbsp Near Full:8 &nbsp&nbsp&nbsp Full:2</div>                          
+                </div>
+                <div style="text-align:right;color:#ccc;padding-right:10px;">
+                    <span>2016-03-29 10:23:11</span>
+                </div>                             
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                </div>                            
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="widget widget-default widget-padding-sm">                            
+                <div class="widget-item-left">
+                    <div style="display:inline;width:100px;height:100px;">
+                    	<canvas width="100" height="100"></canvas>
+                    </div>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-big-int"><span class="num-count">230</span></div>
+                    <div class="widget-title">OSD Capacity</div>
+                    <div class="widget-subtitle">Health:220  &nbsp&nbsp&nbsp Near Full:8 &nbsp&nbsp&nbsp Full:2</div>                          
+                </div>
+                <div style="text-align:right;color:#ccc;padding-right:10px;">
+                    <span>2016-03-29 10:23:11</span>
+                </div>                    
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
+                </div>                            
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    {% load staticfiles %}
+    <script src="{% static "dashboard/js/dashboard.js" %}"></script>
 {% endblock %}

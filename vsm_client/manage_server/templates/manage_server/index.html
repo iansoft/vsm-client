@@ -9,12 +9,14 @@
 {% endblock %}
 
 
+
 {% block page-functions %}
     <li><a href="/server/add/" class=""><span>Add Server</span></a></li>
 {% endblock %}
 
 
 {% block content %}
+    {{ block.super }}
     <div class="row">
         <div class="col-md-12">
             <!-- START DEFAULT DATATABLE -->

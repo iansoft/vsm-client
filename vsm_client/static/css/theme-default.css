@@ -3417,7 +3417,7 @@ background: #1caf9a !important;
   font-weight: 600;
   margin-bottom: 5px;
   line-height: 20px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .widget .widget-subtitle {
   font-size: 12px;

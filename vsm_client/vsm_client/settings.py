@@ -99,7 +99,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    '/manage_account/static/',
-    '/manage_schedule/static/',
-    '/manage_venue/static/',
+    '/dashboard/static/',
 ]

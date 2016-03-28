@@ -1,0 +1,18 @@
+#dVSMStatus3 .widget-data{
+	padding-left: 0px;
+}
+
+#dVSMStatus3 .widget-data a{
+	font-size: 30px;
+	border:0px;
+	padding-top: 23px;
+	margin-bottom: 5px;
+}
+
+#dVSMStatus3 .widget-data a:hover{
+	background-color: white;
+}
+
+.informer-warning{
+	background:#fe970a !important;
+}
