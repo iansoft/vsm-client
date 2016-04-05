@@ -39,9 +39,7 @@
         <div class="col-md-3">
             <div class="widget widget-default widget-padding-sm">                            
                 <div class="widget-item-left">
-                    <div style="display:inline;width:100px;height:100px;">
-                    	<canvas width="100" height="100"></canvas>
-                    </div>
+                    <div id="CapacityPie" class="chart-pie-capacity"></div>
                 </div>
                 <div class="widget-data">
                     <div class="widget-big-int"><span class="num-count">80</span>%</div>
@@ -61,9 +59,7 @@
         <div class="col-md-3">
             <div class="widget widget-default widget-padding-sm">                            
                 <div class="widget-item-left">
-                    <div style="display:inline;width:100px;height:100px;">
-                    	<canvas width="100" height="100"></canvas>
-                    </div>
+                    <div id="StorageGroupPie" class="chart-pie-capacity"></div>
                 </div>
                 <div class="widget-data">
                     <div class="widget-big-int"><span class="num-count">30</span></div>
@@ -82,9 +78,7 @@
         <div class="col-md-3">
             <div class="widget widget-default widget-padding-sm">                            
                 <div class="widget-item-left">
-                    <div style="display:inline;width:100px;height:100px;">
-                    	<canvas width="100" height="100"></canvas>
-                    </div>
+                    <div id="PGPie" class="chart-pie-capacity"></div>
                 </div>
                 <div class="widget-data">
                     <div class="widget-big-int"><span class="num-count">123</span></div>
@@ -139,9 +133,7 @@
 		        </div>                                
 		        <div class="panel-body padding-0">
 		        	<div id="dOSDCapacity">
-		        		<div id="dOSDCapacityChart">
-		        			capacity chart
-		        		</div>
+		        		<div id="OSDPie" class="chart-pie-capacity"></div>
 		        	</div>
 
 		        	<div class="table-responsive">
@@ -454,6 +446,8 @@
 {% block js %}
     {{ block.super }}
     <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+    <script type="text/javascript" src="/static/js/d3/d3.min.js"></script>
+    <script type="text/javascript" src="/static/js/d3/d3.pie.js"></script>
     {% load staticfiles %}
     <script src="{% static "dashboard/js/dashboard.js" %}"></script>
     <!--<script src="{% static "dashboard/js/dashboard.settings.js" %}"></script>-->

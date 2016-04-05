@@ -5,7 +5,7 @@ function pieChart() {
         _data = [],
         _colors = d3.scale.category10(),
         //success warning danger info
-        _colors = ["#98df8a","#ffbb78","#ff9896","#17becf"],
+        _colors = ["#1caf9a","#fe970a","#E04B4A","#17becf"],
         _container = "",
         _svg,
         _bodyG,
@@ -180,19 +180,3 @@ function update() {
 }
 
 
-//将pie分成，6块
-var numberOfDataPoint = 3,
-    data = [];
-
-data = d3.range(numberOfDataPoint).map(function (i) {
-    return {id: i, value: randomData()};
-});
-
-var chart = pieChart()
-        .container("dPie")
-        .radius(50)
-        .innerRadius(0)
-        //.colors(["red","blue","yellow","green"])
-        .data(data);
-
-chart.render();
