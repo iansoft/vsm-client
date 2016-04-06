@@ -1,3 +1,4 @@
+# _*_ coding: utf-8 _*_
 """
 Django settings for vsm_client project.
 
@@ -50,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'vsm_client.urls'
@@ -82,17 +84,23 @@ WSGI_APPLICATION = 'vsm_client.wsgi.application'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'zh_cn'
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
+LANGUAGES = (
+    ('en-us', ('English')),
+    ('zh_cn', ('中文简体')),
+    ('zh-tw', ('中文繁體')),
+)
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+    #xos.path.join(BASE_DIR, '/dashboard/locale'),
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.i18n",
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
