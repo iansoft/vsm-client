@@ -1,49 +1,18 @@
 $(function(){
-	//将pie分成，6块
-	var numberOfDataPoint = 3,
-	    data = [];
 
-	data = d3.range(numberOfDataPoint).map(function (i) {
-	    return {id: i, value: randomData()};
-	});
-
-	var chart1 = pieChart()
-	        .container("CapacityPie")
-	        .radius(50)
-	        .innerRadius(0)
-	        //.colors(["red","blue","yellow","green"])
-	        .data(data);
-
-	chart1.render();
-
-	var chart2 = pieChart()
-	        .container("StorageGroupPie")
-	        .radius(50)
-	        .innerRadius(0)
-	        //.colors(["red","blue","yellow","green"])
-	        .data(data);
-
-	chart2.render();
-
-
-	var chart3 = pieChart()
-	        .container("PGPie")
-	        .radius(50)
-	        .innerRadius(0)
-	        //.colors(["red","blue","yellow","green"])
-	        .data(data);
-
-	chart3.render();
-
-
-	var chart3 = pieChart()
-	        .container("OSDPie")
-	        .radius(50)
-	        .innerRadius(0)
-	        //.colors(["red","blue","yellow","green"])
-	        .data(data);
-
-	chart3.render();
-
-
+	setInterval(function(){
+		http_service("summary",null, summary);
+		http_service("disk_capacity",null, disk_capacity);
+		http_service("storage_group",null, storage_group);
+		http_service("pg",null, pg);
+		http_service("osd",null, osd);
+		http_service("monitor",null, monitor);
+		http_service("mds",null, mds);
+		http_service("iops",null, iops);
+		http_service("lantency",null, lantency);
+		http_service("bandwidth",null, bandwidth);
+		http_service("cpu",null, cpu);
+	},1000);
+	
 })
+

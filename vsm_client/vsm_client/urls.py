@@ -18,5 +18,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^$', include('dashboard.urls')),
     url(r'^home/$', include('dashboard.urls')),
+    url(r'^dashboard/', include('dashboard.urls')),
     url(r'^server/', include('manage_server.urls')),
 ]

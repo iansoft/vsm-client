@@ -22,10 +22,10 @@
 	font-size: 18px !important;
 }
 
-.panel-title-box span{
+/*.panel-title-box span{
 	margin-left: 10px;
 }
-
+*/
 .panel .panel-footer {
 	line-height: 20px;
 }
@@ -64,4 +64,10 @@
 	display:inline;
 	width:100px;
 	height:100px;
+}
+
+.panel-timer{
+	text-align:right;
+	color:#ccc;
+	padding-right:10px;
 }

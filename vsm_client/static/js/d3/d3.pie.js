@@ -116,8 +116,7 @@ function pieChart() {
                 .attr("text-anchor", "middle")
                 .attr("fill", "white")
                 .text(function (d) {
-                    return d.data.id;
-                    //return d.data.value;
+                    return d.data.value+"%";
                 });
     }
 
