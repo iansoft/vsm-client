@@ -1,5 +1,4 @@
 $(function(){
-
 	setInterval(function(){
 		http_service("summary",null, summary);
 		http_service("disk_capacity",null, disk_capacity);
@@ -13,6 +12,5 @@ $(function(){
 		http_service("bandwidth",null, bandwidth);
 		http_service("cpu",null, cpu);
 	},1000);
-	
 })
 

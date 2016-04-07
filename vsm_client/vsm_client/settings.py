@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'dashboard',
     'manage_server',
+    'manage_cluster',
 )
 
 MIDDLEWARE_CLASSES = (

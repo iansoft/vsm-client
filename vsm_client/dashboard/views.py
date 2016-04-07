@@ -176,7 +176,6 @@ def cpu():
         "uptime":now()
     }
 
-
 def percent():
     total = 100;
     health = random.randint(60,total)

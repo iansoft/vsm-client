@@ -1,18 +1,17 @@
 {% extends "base.html" %}
 
 {% block web-title %}
-    【Manage Server】 Virtual Storage Management
+    【Manage Cluster】 Virtual Storage Management
 {% endblock %}
 
 {% block page-title %}
-    Manage Server 
+    Manage Cluster 
 {% endblock %}
 
 
 {% block page-functions %}
-    <li><a href="/server/add/" class=""><span>Add Server</span></a></li>
+    <li><a href="/server/add/" class=""><span>Create Cluster</span></a></li>
 {% endblock %}
-
 
 {% block content %}
     {{ block.super }}
@@ -21,7 +20,7 @@
             <!-- START DEFAULT DATATABLE -->
             <div class="panel panel-default">
                 <div class="panel-heading">                                
-                    <h3 class="panel-title">Server List</h3>
+                    <h3 class="panel-title">Cluster List</h3>
                     <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
@@ -31,22 +30,20 @@
                     <table class="table datatable">
                         <thead>
                             <tr>
-                            	<th style="width:100px;">Checked</th>
+                                <th style="width:100px;">Checked</th>
                                 <th>Name</th>
-                                <th>IP</th>
                                 <th>Status</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {%for server in server_list%}
+                            {%for cluster in cluster_list%}
                                 <tr>
-                                	<td>
+                                    <td>
                                         <input type="checkbox" class="icheckbox" />
                                     </td>
-                                    <td>{{server.name}}</td>
-                                    <td>{{server.public_ip}}</td>
-                                    <td>{{server.status}}</td>
+                                    <td>{{cluster.name}}</td>
+                                    <td>{{cluster.status}}</td>
                                     <td>
                                         <!-- Split button -->
                                         <div class="btn-group">

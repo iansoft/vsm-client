@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^home/$', include('dashboard.urls')),
     url(r'^dashboard/', include('dashboard.urls')),
     url(r'^server/', include('manage_server.urls')),
+    url(r'^cluster/', include('manage_cluster.urls')),
 ]
