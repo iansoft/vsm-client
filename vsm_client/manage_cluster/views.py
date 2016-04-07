@@ -16,3 +16,10 @@ def index(request):
     return render(request, 
                 "manage_cluster/index.html",
                 {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list, "cluster_list":cluster_list})
+
+
+def add_view(request):
+    menu_list = set_menu("Cluster Management","Cluster")
+    function_item = {"name":"Add Cluster", "url":"/cluster/add/"}
+    breadcrumb_list = set_breadcrumb("Cluster Management","Cluster",function_item)
+    return render(request, 'manage_cluster/add.html', {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list})
