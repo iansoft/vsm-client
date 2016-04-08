@@ -424,7 +424,7 @@ $(function() {
                 uiDatatable();
                 uiRangeSlider();
                 uiKnob();
-                uiSmartWizard();
+                //uiSmartWizard();
                 uiOwlCarousel();
                 uiSummernote();
                 uiScroller();

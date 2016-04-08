@@ -109,4 +109,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     '/dashboard/static/',
+    '/manage_cluster/static/',
+    '/manage_server/static/',
 ]
