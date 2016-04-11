@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="en-us">
+    <head>
+        {% trans "This is the title" as the_title %}
+        <title>{{ the_title }}</title>
+        <meta name="description" content="{{ the_title }}">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <script type="text/javascript" src="/static/js/plugins/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins/jquery.i18n.properties-min-1.0.9.js"></script>
+
+        <script type="text/javascript">
+            $(function(){
+                jQuery.i18n.properties({
+                    name : 'strings', //资源文件名称
+                    path : '/static/i18n/', //资源文件路径
+                    mode : 'map', //用Map的方式使用资源文件中的值
+                    language : 'en',//'zh'
+                    async:true,
+                    callback : function() {//加载成功后设置显示内容
+                        console.log($.i18n.prop('Login'));
+                        $('#button_login').val($.i18n.prop('Login'));
+                        $('#label_username').html($.i18n.prop('User Name'));
+                        $('#label_password').html($.i18n.prop('Password'));
+                    }
+                });
+            })
+        </script>
+
+    </head>
+    <body>
+        output1: {{output1}} <br/>
+        output2: {{output2}} <br/>
+        output3: {{output3}} <br/>
+        {{pluralization}} <br/>
+        {{May}}<br/>
+ 
+        <p>{% trans var_in_html %}</p>
+        <p>{% trans "var_in_html2" noop %}</p>
+
+
+        {% trans "starting point" as start %}
+        {% trans "end point" as end %}
+        {% trans "La Grande Boucle" as race %}
+
+        <h1>
+          <a href="/" title="{% blocktrans %}Back to '{{ race }}' homepage{% endblocktrans %}">{{ race }}</a>
+        </h1>
+        <p>
+        {% for stage in tour_stages %}
+            {% cycle start end %}: {{ stage }}{% if forloop.counter|divisibleby:2 %}<br />{% else %}, {% endif %}
+        {% endfor %}
+        </p>
+
+        根据上下文翻译
+        <hr>
+        {% trans "May" context "month name" %}
+
+        blocktrans template tag
+        <hr>
+        {%for student in info0811%}
+            {% blocktrans %}The student name is {{student}}.{% endblocktrans %}
+            <br>
+        {%endfor%}
+        {% blocktrans with student_length=info0811|length %}Total:{{student_length}}{% endblocktrans %}
+
+        <br>
+        通过blocktrans with tag来获取对象属性<br/>
+        {% blocktrans with student_name=student.name %}The student name is {{ student_name }}.{% endblocktrans %}
+
+        <hr>
+        {% get_current_language as LANGUAGE_CODE %}
+        <!-- Current language: {{ LANGUAGE_CODE }} -->
+        <p>{% trans "Welcome to our page" %}</p>
+
+    
+        <br/>
+        <div id="js_i18n">
+             <div id="content"> 
+                 <div> 
+                     <label id="label_username"></label> 
+                     <input type="text" id="username"></input> 
+                 </div> 
+                 <div> 
+                     <label id="label_password"></label> 
+                     <input type="password" id="password"></input> 
+                 </div> 
+                 <input  type="button" id="button_login"/> 
+             </div>
+             <p id="login"></p>
+        </div>
+
+    </body>
+</html>
+
+

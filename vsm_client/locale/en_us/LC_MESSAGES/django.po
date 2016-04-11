@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-12 06:18+0800\n"
+"POT-Creation-Date: 2016-04-12 06:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,66 +16,62 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: .\i18n_demo\templates\i18n_demo\index.html:5
-#, fuzzy
-#| msgid "This is the title."
 msgid "This is the title"
-msgstr "标题"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:29
+#: .\i18n_demo\templates\i18n_demo\index.html:30
 msgid "var_in_html2"
-msgstr "134"
-
-#: .\i18n_demo\templates\i18n_demo\index.html:32
-msgid "starting point"
-msgstr "开始点"
+msgstr ""
 
 #: .\i18n_demo\templates\i18n_demo\index.html:33
-msgid "end point"
-msgstr "结束点"
+msgid "starting point"
+msgstr ""
 
 #: .\i18n_demo\templates\i18n_demo\index.html:34
-msgid "La Grande Boucle"
-msgstr "环法自行车赛"
+msgid "end point"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:37
+#: .\i18n_demo\templates\i18n_demo\index.html:35
+msgid "La Grande Boucle"
+msgstr ""
+
+#: .\i18n_demo\templates\i18n_demo\index.html:38
 #, python-format
 msgid "Back to '%(race)s' homepage"
-msgstr " 回到 '%(race)s' 主页 "
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:47 .\i18n_demo\views.py:37
+#: .\i18n_demo\templates\i18n_demo\index.html:48 .\i18n_demo\views.py:37
 msgctxt "month name"
 msgid "May"
-msgstr "五月"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:52
+#: .\i18n_demo\templates\i18n_demo\index.html:53
 #, python-format
 msgid "The student name is %(student)s."
-msgstr "学生名：%(student)s。"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:55
-#, fuzzy, python-format
-#| msgid ""
-#| "Total:%(student_length)s\n"
-#| "        "
+#: .\i18n_demo\templates\i18n_demo\index.html:56
+#, python-format
 msgid "Total:%(student_length)s"
-msgstr "总计：%(student_length)s"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:59
-#, fuzzy, python-format
-#| msgid "The student name is %(student_name)s."
+#: .\i18n_demo\templates\i18n_demo\index.html:60
+#, python-format
 msgid "The student name is %(student_name)s."
-msgstr "学生名：%(student)s。"
+msgstr ""
 
-#: .\i18n_demo\templates\i18n_demo\index.html:64
+#: .\i18n_demo\templates\i18n_demo\index.html:65
+#: .\i18n_demo\templates\i18n_demo\index.html:70
 msgid "Welcome to our page"
-msgstr "欢迎来到我的主页"
+msgstr ""
 
 #. Translators: the example for the translator comments
 #: .\i18n_demo\views.py:17
 msgid "Welcome to my site."
-msgstr "欢迎来到我的主页"
+msgstr ""
 
 #: .\i18n_demo\views.py:20
 msgid " "
@@ -84,31 +80,31 @@ msgstr ""
 #: .\i18n_demo\views.py:22
 #, python-format
 msgid "Today is %(month)s %(day)s."
-msgstr "今天是%(month)s月%(day)s日."
+msgstr ""
 
 #: .\i18n_demo\views.py:30
 #, python-format
 msgid "there is %(count)d object"
 msgid_plural "there are %(count)d objects"
-msgstr[0] "这里有一个对象 %(count)d"
-msgstr[1] "这里有多个对象 %(count)d"
+msgstr[0] ""
+msgstr[1] ""
 
 #: .\i18n_demo\views.py:41 .\i18n_demo\views.py:44
 msgid "Xu Shouan"
-msgstr "徐守安"
+msgstr ""
 
 #: .\i18n_demo\views.py:41
 msgid "Lou Zhigang"
-msgstr "娄志刚"
+msgstr ""
 
 #: .\i18n_demo\views.py:44
 msgid "male"
-msgstr "男"
+msgstr ""
 
 #: .\i18n_demo\views.py:46
 msgid "LLLLLLLLLLLLLL"
-msgstr "22321"
+msgstr ""
 
 #: .\i18n_demo\views.py:46
 msgid "XXXXXXXXXXXXXXXXXXX"
-msgstr "321312"
+msgstr ""

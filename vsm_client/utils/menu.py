@@ -2,6 +2,7 @@
 
 menu_list = [
 	{"name":"Dashboard", "url":"/home/", "icon":"fa-dashboard", "openable":False,"active":"","children":[]},
+	{"name":"i18n", "url":"/i18n/", "icon":"fa-dashboard", "openable":False,"active":"","children":[]},
 	{"name":"Cluster Management", "url":"/cluster/", "icon":"fa-cloud", "openable":True,"active":"","children":[
 		{"name":"Cluster", "url":"/cluster/","icon":"fa-star", "openable":False,"active":"","children":[]},
 		{"name":"Server", "url":"/server/","icon":"fa-desktop", "openable":False,"active":"","children":[]},

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'i18n_demo',
     'dashboard',
     'manage_server',
     'manage_cluster',
@@ -85,19 +86,19 @@ WSGI_APPLICATION = 'vsm_client.wsgi.application'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
-LANGUAGE_CODE = 'zh_cn'
+LANGUAGE_CODE = 'zh-cn'
+# LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-LANGUAGES = (
-    ('en-us', ('English')),
-    ('zh_cn', ('中文简体')),
-    ('zh-tw', ('中文繁體')),
-)
+# LANGUAGES = (
+#     ('en-us', ('English')),
+#     ('zh_cn', ('中文简体')),
+#     ('zh-tw', ('中文繁體')),
+# )
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
-    #xos.path.join(BASE_DIR, '/dashboard/locale'),
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.i18n",
@@ -108,5 +109,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'i18n'),
     '/dashboard/static/',
 ]

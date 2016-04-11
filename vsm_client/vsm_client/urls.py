@@ -15,10 +15,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+
 urlpatterns = [
     url(r'^$', include('dashboard.urls')),
     url(r'^home/$', include('dashboard.urls')),
     url(r'^dashboard/', include('dashboard.urls')),
     url(r'^server/', include('manage_server.urls')),
     url(r'^cluster/', include('manage_cluster.urls')),
+    url(r'^i18n/', include('i18n_demo.urls')),
 ]
