@@ -111,4 +111,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'i18n'),
     '/dashboard/static/',
+    '/manage_cluster/static/',
+    '/manage_server/static/',
 ]
