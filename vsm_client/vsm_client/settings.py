@@ -97,12 +97,12 @@ USE_TZ = True
 #     ('zh_cn', ('中文简体')),
 #     ('zh-tw', ('中文繁體')),
 # )
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
-TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.i18n",
-)
+# LOCALE_PATHS = (
+#     os.path.join(BASE_DIR, 'locale'),
+# )
+# TEMPLATE_CONTEXT_PROCESSORS = (
+#     "django.core.context_processors.i18n",
+# )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
