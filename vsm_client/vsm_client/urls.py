@@ -20,7 +20,22 @@ urlpatterns = [
     url(r'^$', include('dashboard.urls')),
     url(r'^home/$', include('dashboard.urls')),
     url(r'^dashboard/', include('dashboard.urls')),
-    url(r'^server/', include('manage_server.urls')),
     url(r'^cluster/', include('manage_cluster.urls')),
-    # url(r'^i18n/', include('i18n_demo.urls')),
+    url(r'^server/', include('manage_server.urls')),
+    url(r'^device/', include('manage_device.urls')),
+    url(r'^pool/', include('manage_pool.urls')),
+    url(r'^ec_profile/', include('manage_ec_profile.urls')),
+    url(r'^rbd/', include('manage_rbd.urls')),
+    url(r'^crushmap/', include('manage_storage_group.urls')),
+    url(r'^zone/', include('manage_zone.urls')),
+
+    url(r'^performance/monitor/', include('performance_monitor.urls')),
+
+    url(r'^integrate/hadoop/', include('integrate_hadoop.urls')),
+    url(r'^integrate/openstack/', include('integrate_openstack.urls')),
+
+    url(r'^settings/', include('system_settings.urls')),
+    url(r'^account/', include('manage_account.urls')),
+    url(r'^role/', include('manage_role.urls')),
+    url(r'^upgrade/ceph/', include('system_upgrade.urls')),
 ]

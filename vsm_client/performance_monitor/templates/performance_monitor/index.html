@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Monitor Cluster】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Monitor Cluster
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default tabs">                            
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#tab-osd" role="tab" data-toggle="tab">OSD</a></li>
+                    <li><a href="#tab-monitor" role="tab" data-toggle="tab">Monitor</a></li>
+                    <li><a href="#tab-mds" role="tab" data-toggle="tab">MDS</a></li>
+                    <li><a href="#tab-pg" role="tab" data-toggle="tab">PG</a></li>
+                    <li><a href="#tab-pool" role="tab" data-toggle="tab">Pool</a></li>
+                    <li><a href="#tab-rbd" role="tab" data-toggle="tab">RBD</a></li>
+                    <li><a href="#tab-sg" role="tab" data-toggle="tab">Storage Group</a></li>
+                </ul>                            
+                <div class="panel-body tab-content">
+                    <div class="tab-pane active" id="tab-osd">
+                        OSD<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-monitor">
+                        Monitor<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-mds">
+                        MDS<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-pg">
+                        PG<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-pool">
+                        Pool<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-rbd">
+                        RBD<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-sg">
+                        Storage Group<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}

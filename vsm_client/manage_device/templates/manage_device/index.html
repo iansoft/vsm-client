@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Manage Device】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Manage Device
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Device List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="" style="width:100%;height:40px;padding-bottom:5px;text-align:right;">
+                        <a id="btnAddServer" type="button" class="btn btn-primary ">Restart Device</a>
+                        <button id="btnRemoveServer" type="button" class="btn btn-primary ">Remove Device</button>
+                        <button id="btnStartServer" type="button" class="btn btn-primary">Restore Device</button>
+                        <button id="btnStopServer" type="button" class="btn btn-primary">Add Device</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
+                                <th>Name</th>
+                                <th>Server</th>
+                                <th>Storage Class</th>
+                                <th>Zone</th>
+                                <!-- <th>Weight</th>
+                                <th>Data Device Status</th>
+                                <th>Journal Device Status</th>
+                                <th>Capacity Status</th> -->
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for device in device_list%}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="icheckbox" />
+                                    </td>
+                                    <td>{{device.name}}</td>
+                                    <td>{{device.server}}</td>
+                                    <td>{{device.storage_class}}</td>
+                                    <td>{{device.zone}}</td>
+                                    <td>{{device.status}}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary">Restart</button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Restore</a></li>
+                                            <li><a href="#">Detail</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#" style="color:red">Remove</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}

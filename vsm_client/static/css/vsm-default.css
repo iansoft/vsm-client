@@ -1,0 +1,5 @@
+.btn-primary:hover{
+    cursor: pointer;
+    background-color: #1caf9a;
+    border-color: #1caf9a;
+}

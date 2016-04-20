@@ -28,27 +28,50 @@
                     </ul>                                
                 </div>
                 <div class="panel-body">
+                    <div class="" style="width:100%;height:40px;padding-bottom:5px;text-align:right;">
+                        <a id="btnAddServer" type="button" class="btn btn-primary ">Add Server</a>
+                        <button id="btnRemoveServer" type="button" class="btn btn-primary ">Remove Server</button>
+                        <button id="btnStartServer" type="button" class="btn btn-primary">Start Server</button>
+                        <button id="btnStopServer" type="button" class="btn btn-primary">Stop Server</button>
+                    </div>
                     <table class="table datatable">
                         <thead>
                             <tr>
-                            	<th style="width:100px;">Checked</th>
+                            	<th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
                                 <th>Name</th>
-                                <th>IP</th>
+                                <th>Management IP</th>
+                                <th>Public IP</th>
+                                <th>Cluster IP</th>
+                                <th>Monitor</th>
+                                <th>Zone</th>
+                                <th>OSD Amount</th>
                                 <th>Status</th>
-                                <th>Options</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {%for server in server_list%}
                                 <tr>
-                                	<td>
+                                    <td>
                                         <input type="checkbox" class="icheckbox" />
                                     </td>
                                     <td>{{server.name}}</td>
+                                    <td>{{server.management_ip}}</td>
                                     <td>{{server.public_ip}}</td>
+                                    <td>{{server.cluster_ip}}</td>
+                                    <td>
+                                        {%if server.monitor %}
+                                            <input type="checkbox" class="icheckbox" checked="checked" />
+                                        {%else%}
+                                            <input type="checkbox" class="icheckbox"/>
+                                        {%endif%}
+                                    </td>
+                                    <td>{{server.zone}}</td>
+                                    <td>{{server.osd_amount}}</td>
                                     <td>{{server.status}}</td>
                                     <td>
-                                        <!-- Split button -->
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-primary">Update</button>
                                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,7 +81,7 @@
                                           <ul class="dropdown-menu">
                                             <li><a href="#">Detail</a></li>
                                             <li role="separator" class="divider"></li>
-                                            <li><a href="#" style="color:red">Delete</a></li>
+                                            <li><a href="#" style="color:red">Remove</a></li>
                                           </ul>
                                         </div>
                                     </td>

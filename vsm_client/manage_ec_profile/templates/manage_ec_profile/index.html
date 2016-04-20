@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Manage EC Profile】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Manage EC Profile
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    EC Profile
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}

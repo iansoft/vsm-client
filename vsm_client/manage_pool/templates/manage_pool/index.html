@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Manage Pool】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Manage Pool
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Pool List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="" style="width:100%;height:40px;padding-bottom:5px;text-align:right;">
+                        <a id="btnAddServer" type="button" class="btn btn-primary ">Create Replicated Pool</a>
+                        <button id="btnRemoveServer" type="button" class="btn btn-primary ">Create EC Pool</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
+                                <th>Name</th>
+                                <th>Storage Group</th>
+                                <th>PG Amount</th>
+                                <th>Size</th>
+                                <th>Quota(GB)</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                                <!-- <th>Cache Tier Status</th>
+                                <th>Erasure Code Status</th>
+                                <th>Create By</th>
+                                <th>Tag</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for pool in pool_list %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="icheckbox" />
+                                    </td>
+                                    <td>{{pool.name}}</td>
+                                    <td>{{pool.storage_group}}</td>
+                                    <td>{{pool.pg_amount}}</td>
+                                    <td>{{pool.size}}</td>
+                                    <td>{{pool.quota}}</td>
+                                    <td>{{pool.status}}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Detail</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#" style="color:red">Delete</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}

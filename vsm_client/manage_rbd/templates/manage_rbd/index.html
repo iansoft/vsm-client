@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Manage RBD】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Manage RBD
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    RBD
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}

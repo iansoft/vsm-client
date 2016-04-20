@@ -6,8 +6,13 @@ def index(request):
     for i in range(100):
         server = {
             "name":"server_name"+str(i),
+            "management_ip":"192.168.1."+str(i),
             "public_ip":"192.168.1."+str(i),
-            "status":"Active"
+            "cluster_ip":"192.168.1."+str(i),
+            "monitor":True,
+            "zone":"zone_"+str(i),
+            "osd_amount":i*10,
+            "status":"Active",
         }
         server_list.append(server);
 
