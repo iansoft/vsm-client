@@ -13,6 +13,7 @@ def index(request):
             "monitor":True,
             "zone":"zone_"+str(i),
             "osd_amount":i*10,
+            "ceph_version":"0.80.7",
             "status":"Active",
         }
         server_list.append(server);
@@ -38,6 +39,7 @@ def detail_view(request,id):
             "status":"Active",
             "monitor":True,
             "osd_amount":10,
+            "ceph_version":"0.80.7",
             "MDS":True,
         },
         "system":{
