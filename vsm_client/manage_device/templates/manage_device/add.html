@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+  【Add Device】 【Manage Server】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Add Device 
+{% endblock %}
+
+{% block page-functions %}
+
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="validate" role="form" class="form-horizontal" action="javascript:alert('Form #validate submited');">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Device</h3>
+                    </div>
+
+                    <div class="panel-body">                                                            
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Server</label>
+                            <div class="col-md-6 col-xs-12">                                            
+                                <select class="form-control">
+                                    <option>Server 1</option>
+                                    <option>Server 2</option>
+                                    <option>Server 3</option>
+                                    <option>Server 4</option>
+                                    <option>Server 5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Weight</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="form-control"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">                                        
+                            <label class="col-md-3 col-xs-12 control-label">Storage Group</label>
+                            <div class="col-md-6 col-xs-12">                                            
+                                <select class="form-control">
+                                    <option>Storage Group 1</option>
+                                    <option>Storage Group 2</option>
+                                    <option>Storage Group 3</option>
+                                    <option>Storage Group 4</option>
+                                    <option>Storage Group 5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">OSD Location</label>
+                            <div class="col-md-6 col-xs-12">                                            
+                                <select class="form-control">
+                                    <option>OSD Location 1</option>
+                                    <option>OSD Location 2</option>
+                                    <option>OSD Location 3</option>
+                                    <option>OSD Location 4</option>
+                                    <option>OSD Location 5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Journal Device</label>
+                            <div class="col-md-6 col-xs-12">                                            
+                                <select class="form-control">
+                                    <option>Journal Device 1</option>
+                                    <option>Journal Device 2</option>
+                                    <option>Journal Device 3</option>
+                                    <option>Journal Device 4</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Data Device</label>
+                            <div class="col-md-6 col-xs-12">                                            
+                                <select class="form-control">
+                                    <option>Data Device 1</option>
+                                    <option>Data Device 2</option>
+                                    <option>Data Device 3</option>
+                                    <option>Data Device 4</option>
+                                    <option>Data Device 5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default">Clear Form</button>                                    
+                        <button class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="/static/js/plugins/bootstrap-select.js"></script>
+
+    <script type='text/javascript' src='/static/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js'></script>
+    <script type='text/javascript' src='/static/js/plugins/validationengine/jquery.validationEngine.js'></script>        
+    <script type='text/javascript' src='/static/js/plugins/jquery.validate.js'></script>   
+{% endblock %}

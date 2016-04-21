@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Import Device】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Import Device
+{% endblock %}
+
+
+{% block page-functions %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Device List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="table-action-container">
+                        <a href="">Download the template</a>
+                        <button id="btnImportDevice" type="button" class="btn btn-primary">Import Device</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>Server</th>
+                                <th>Weight</th>
+                                <th>Storage Group</th>
+                                <th>OSD Location</th>
+                                <th>Jouranl Device</th>
+                                <th>Data Device</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default">Clear Form</button>
+                    <button class="btn btn-primary pull-right">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{%block js%}
+{{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{%endblock%}
