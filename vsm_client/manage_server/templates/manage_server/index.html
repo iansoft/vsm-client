@@ -9,8 +9,14 @@
 {% endblock %}
 
 
+{% block css %}
+    {{ block.super }}
+    {% load staticfiles %}
+    <link href="{% static "manage_server/css/vsm.manage.server.css" %}" rel="stylesheet">
+{% endblock %}
+
 {% block page-functions %}
-    <li><a href="/server/add/" class=""><span>Add Server</span></a></li>
+    <!-- <li><a href="/server/add/" class=""><span>Add Server</span></a></li> -->
 {% endblock %}
 
 
@@ -29,7 +35,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="" style="width:100%;height:40px;padding-bottom:5px;text-align:right;">
-                        <a id="btnAddServer" type="button" class="btn btn-primary ">Add Server</a>
+                        <button id="btnAddServer" type="button" class="btn btn-primary " data-toggle="modal" data-target="#addServerModal">Add Server</button>
                         <button id="btnRemoveServer" type="button" class="btn btn-primary ">Remove Server</button>
                         <button id="btnStartServer" type="button" class="btn btn-primary">Start Server</button>
                         <button id="btnStopServer" type="button" class="btn btn-primary">Stop Server</button>
@@ -73,13 +79,12 @@
                                     <td>{{server.status}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <a href="/server/detail/{{server.id}}/" type="button" class="btn btn-primary">Detail</a>
                                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <span class="caret"></span>
                                                 <span class="sr-only">Toggle Dropdown</span>
                                             </button>
                                           <ul class="dropdown-menu">
-                                            <li><a href="#">Detail</a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#" style="color:red">Remove</a></li>
                                           </ul>
@@ -93,6 +98,91 @@
             </div>
         </div>
     </div>
+
+    <!-- START DIALOG -->
+    <div class="dialog-container">
+        <div id="addServerModal" class="modal fade bs-example-modal-lg"  tabindex="-1" role="dialog" aria-labelledby="addServerModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="addServerModalLabel">Add Server</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h3>Server List</h3>
+                                <table id="tAddServerList" class="table" style="">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:100px;">
+                                                <input type="checkbox" class="icheckbox" />
+                                            </th>
+                                            <th>Name</th>
+                                            <th>Management IP</th>
+                                            <th>Monitor</th>
+                                            <!-- <th>public_ip</th>
+                                            <th>cluster_ip</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {%for server in server_list%}
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox" class="icheckbox" />
+                                                </td>
+                                                <td>{{server.name}}</td>
+                                                <td>{{server.management_ip}}</td>
+                                                <td>
+                                                    <input type="checkbox" class="icheckbox"/>
+                                                </td>
+                                                <!-- <td>{{server.public_ip}}</td>
+                                                <td>{{server.cluster_ip}}</td> -->
+                                            </tr>
+                                        {%endfor%}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Selected Server</h3>
+                                <div id="divSelectedServer">
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell monitor"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell monitor"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <span class="fa fa-bell"></span>
+                                        Server(192.168.1.1)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Add Server</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END DIALOG -->
 {% endblock %}
 
 
@@ -100,4 +190,6 @@
     {{block.super}}
     <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "manage_server/js/vsm.manage.server.js" %}"></script>
 {%endblock%}

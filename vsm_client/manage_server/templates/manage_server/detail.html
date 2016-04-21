@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+    【Server Detail】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    {{server.basic.name}}<span class="fa fa-circle server-status-health"></span>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    {% load staticfiles %}
+    <link href="{% static "manage_server/css/vsm.manage.server.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block page-functions %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}
+    <!-- START SERVER SUMMARY -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget widget-default attribute-panel">
+                <h3>Basic</h3>
+                <div class="row">
+                    <div class="col-md-3 attribute-group">
+                        <label>Status:</label><label>{{server.basic.status}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>OS:</label><label>{{server.system.OS}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>Zone:</label><label>{{server.basic.zone}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 attribute-group">
+                        <label>OSD Amount:</label><label>{{server.basic.osd_amount}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>Monitor:</label><label>{{server.basic.monitor}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>MDS:</label><label>{{server.basic.MDS}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget widget-default attribute-panel">
+                <h3>Hardware</h3>
+                <div class="row">
+                    <div class="col-md-3 attribute-group">
+                        <label>CPU:</label><label>{{server.hardware.cpu}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>RAM:</label><label>{{server.hardware.RAM}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>System Type:</label><label>{{server.hardware.system_type}}</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget widget-default attribute-panel">
+                <h3>Network</h3>
+                <div class="row">
+                    <div class="col-md-3 attribute-group">
+                        <label>Management IP:</label><label>{{server.network.management_ip}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>Public IP:</label><label>{{server.network.public_ip}}</label>
+                    </div>
+                    <div class="col-md-3 attribute-group">
+                        <label>Cluster IP:</label><label>{{server.network.cluster_ip}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SERVER SUMMARY -->
+
+    <!-- START SERVER DETAIL -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default tabs">                            
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#tab-osd" role="tab" data-toggle="tab">OSD</a></li>
+                    <li><a href="#tab-monitor" role="tab" data-toggle="tab">Monitor</a></li>
+                    <li><a href="#tab-mds" role="tab" data-toggle="tab">MDS</a></li>
+                </ul>                            
+                <div class="panel-body tab-content">
+                    <div class="tab-pane active" id="tab-osd">
+                        OSD<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-monitor">
+                        Monitor<br/>
+                    </div>
+                    <div class="tab-pane" id="tab-mds">
+                        MDS<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SERVER DETAIL -->
+
+{% endblock %}
+
+
+{%block js%}
+    {{block.super}}
+    <script type="text/javascript" src="/static/js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "manage_server/js/vsm.manage.server.js" %}"></script>
+{%endblock%}

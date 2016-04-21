@@ -3,3 +3,25 @@
     background-color: #1caf9a;
     border-color: #1caf9a;
 }
+
+.table{
+    border:1px solid #ddd;
+}
+
+.dataTables_length, .dataTables_filter{
+    border-bottom: none;
+}
+
+.attribute-panel{
+    min-height: 0px;
+}
+
+.attribute-group{
+    /*margin-bottom: 5px;*/
+    /*display: inline-block;*/
+
+}
+
+.attribute-group>label{
+    margin-right: 10px;
+}

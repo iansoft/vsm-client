@@ -33,6 +33,7 @@
                         <button id="btnRemoveServer" type="button" class="btn btn-primary ">Remove Device</button>
                         <button id="btnStartServer" type="button" class="btn btn-primary">Restore Device</button>
                         <button id="btnStopServer" type="button" class="btn btn-primary">Add Device</button>
+                        <button id="btnStopServer" type="button" class="btn btn-primary">Import Device</button>
                     </div>
                     <table class="table datatable">
                         <thead>
@@ -44,8 +45,9 @@
                                 <th>Server</th>
                                 <th>Storage Class</th>
                                 <th>Zone</th>
-                                <!-- <th>Weight</th>
-                                <th>Data Device Status</th>
+                                <th>Weight</th>
+                                <th>Capacity</th>
+                                <!-- <th>Data Device Status</th>
                                 <th>Journal Device Status</th>
                                 <th>Capacity Status</th> -->
                                 <th>Status</th>
@@ -62,6 +64,8 @@
                                     <td>{{device.server}}</td>
                                     <td>{{device.storage_class}}</td>
                                     <td>{{device.zone}}</td>
+                                    <td>weight</td>
+                                    <td>Capacity</td>
                                     <td>{{device.status}}</td>
                                     <td>
                                         <div class="btn-group">
@@ -73,6 +77,10 @@
                                           <ul class="dropdown-menu">
                                             <li><a href="#">Restore</a></li>
                                             <li><a href="#">Detail</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Data Device</a></li>
+                                            <li><a href="#">Journal Device</a></li>
+                                            <li><a href="#">Capacity</a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#" style="color:red">Remove</a></li>
                                           </ul>

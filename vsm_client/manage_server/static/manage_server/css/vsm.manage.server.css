@@ -1,0 +1,17 @@
+#divSelectedServer>button{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+#divSelectedServer>button>span{
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#divSelectedServer>button>span.monitor{
+    color: yellow;
+}
+
+.server-status-health{
+    color:#95b75d;
+}

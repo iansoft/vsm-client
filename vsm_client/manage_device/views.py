@@ -3,7 +3,7 @@ from utils.menu import set_menu,set_breadcrumb
 
 def index(request):
     device_list = []
-    for i in range(100):
+    for i in range(10):
         device = {
             "name":"osd."+str(i),
             "server":"server_"+str(i),
