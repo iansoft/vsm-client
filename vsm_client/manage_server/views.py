@@ -18,7 +18,7 @@ def index(request):
         }
         server_list.append(server);
 
-    menu_list = set_menu("Cluster Management","Server")
+    menu_list = set_menu("Server Management","Server")
     function_item = {"name":"Server List", "url":""}
     breadcrumb_list = set_breadcrumb("Cluster Management","Server",function_item)
     return render(request, 
@@ -27,7 +27,7 @@ def index(request):
 
 
 def detail_view(request,id):
-    menu_list = set_menu("Cluster Management","Server")
+    menu_list = set_menu("Server Management","Server")
     function_item = {"name":"", "url":""}
     breadcrumb_list = set_breadcrumb("Cluster Management","Server",function_item)
 
@@ -68,7 +68,7 @@ def detail_view(request,id):
     return render(request, 'manage_server/detail.html', {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list,"server":server})
 
 def add_view(request):
-    menu_list = set_menu("Cluster Management","Server")
+    menu_list = set_menu("Server Management","Server")
     function_item = {"name":"Add Server", "url":"/server/add/"}
     breadcrumb_list = set_breadcrumb("Cluster Management","Server",function_item)
     return render(request, 'manage_server/add.html', {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list})

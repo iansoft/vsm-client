@@ -29,8 +29,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="" style="width:100%;height:40px;padding-bottom:5px;text-align:right;">
-                        <a id="btnAddServer" type="button" class="btn btn-primary ">Create Replicated Pool</a>
-                        <button id="btnRemoveServer" type="button" class="btn btn-primary ">Create EC Pool</button>
+                        <a id="btnCreateReplicatedPool"  href="/pool/create_replicated_pool/" class="btn btn-primary ">Create Replicated Pool</a>
+                        <a id="btnCreateECPool"  href="/pool/create_ec_pool/" class="btn btn-primary ">Create EC Pool</a>
                     </div>
                     <table class="table datatable">
                         <thead>
@@ -44,10 +44,10 @@
                                 <th>Size</th>
                                 <th>Quota(GB)</th>
                                 <th>Status</th>
-                                <th>Action</th>
-                                <!-- <th>Cache Tier Status</th>
+                                <th>Cache Tier Status</th>
                                 <th>Erasure Code Status</th>
-                                <th>Create By</th>
+                                <th>Action</th>
+                                <!--<th>Create By</th>
                                 <th>Tag</th> -->
                             </tr>
                         </thead>
@@ -63,6 +63,8 @@
                                     <td>{{pool.size}}</td>
                                     <td>{{pool.quota}}</td>
                                     <td>{{pool.status}}</td>
+                                    <td>OK</td>
+                                    <td>OK</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-primary">Update</button>
@@ -72,6 +74,9 @@
                                             </button>
                                           <ul class="dropdown-menu">
                                             <li><a href="#">Detail</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="/pool/add_cache_tier/">Add Cache Tier</a></li>
+                                            <li><a href="#">Remove Cache Tier</a></li>
                                             <li role="separator" class="divider"></li>
                                             <li><a href="#" style="color:red">Delete</a></li>
                                           </ul>

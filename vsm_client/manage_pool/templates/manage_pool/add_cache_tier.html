@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+  【Add Cache Tier】Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Add Cache Tier
+{% endblock %}
+
+{% block page-functions %}
+
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="validate" role="form" class="form-horizontal" action="javascript:alert('Form #validate submited');">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Cache Tier</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Storage Tier Pool</label>
+                            <label class="col-md-3 col-xs-12 control-label" style="text-align:left">--</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Cache Tier Pool</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="validate[required] form-control"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">                                        
+                            <label class="col-md-3 col-xs-12 control-label">Cache Mode</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control">
+                                    <option>Write Back</option>
+                                    <option>Read Only</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">FORCE NONEMPTY</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="checkbox" class="icheckbox" checked="checked" />
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Advanced Settings</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="checkbox" class="icheckbox" checked="checked" />
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <!-- Advanced Settings -->
+                        <div id="AdvancedSetting">
+                            <hr>
+                            <div class="form-group">  
+                                <label class="col-md-3 col-xs-12 control-label">Hit Set Type</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <select class="form-control">
+                                        <option>bloom</option>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Hit Set Count</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Hit Set Period(s)</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Target Maximum Memory(MB)</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Target Full Ratio</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Target Maximum Objects</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Target Minimum Flush Age(m)</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 col-xs-12 control-label">Target Minimum Evict Age(m)</label>
+                                <div class="col-md-6 col-xs-12">
+                                    <input type="text" class="validate[required] form-control"/>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default">Clear Form</button>                                    
+                        <button class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="/static/js/plugins/bootstrap-select.js"></script>
+    <script type='text/javascript' src='/static/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js'></script>
+    <script type='text/javascript' src='/static/js/plugins/validationengine/jquery.validationEngine.js'></script>        
+    <script type='text/javascript' src='/static/js/plugins/jquery.validate.js'></script>
+    <script type='text/javascript' src='/static/js/plugins/jquery.tagsinput.min.js'></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{% endblock %}

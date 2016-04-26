@@ -16,7 +16,67 @@
 
 {% block content %}
     {{ block.super }}
-    Account
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Account List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="table-action-container" style="">
+                        <a id="btnCreateReplicatedPool"  href="/account/create/" class="btn btn-primary ">Create Account</a>
+                         <button id="btnCreateReplicatedPool" type="button" class="btn btn-primary ">Delete Account</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
+                                <th>Name</th>
+                                <th>Group</th>
+                                <th>Role</th>
+                                <th>Bind Keystone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for account in account_list%}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="icheckbox" />
+                                    </td>
+                                    <td>{{account.name}}</td>
+                                    <td>{{account.group}}</td>
+                                    <td>{{account.role}}</td>
+                                    <td>True</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/server/detail/{{server.id}}/" type="button" class="btn btn-primary">Update</a>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Bind Keystone</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#" style="color:red">Delete</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {%block js%}

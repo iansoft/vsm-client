@@ -75,7 +75,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             #insert your TEMPLATE_DIRS here
-            os.path.join(BASE_DIR,  'templates')
+            os.path.join(BASE_DIR,  'templates'),
+            os.path.join(BASE_DIR,  'performance_monitor/templates/performance_monitor'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

@@ -16,7 +16,69 @@
 
 {% block content %}
     {{ block.super }}
-    VSM Settigns
+        <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Settings List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="table-action-container" style="">
+                        <!-- some actions -->
+                    </div>
+                    <!-- datatable -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                                <th>Enable</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for settings in settings_list%}
+                                <tr>
+                                    <td>{{settings.name}}</td>
+                                    <td>
+                                        <input type="text" value="{{settings.value}}" />
+                                    </td>
+                                    <td>
+                                        {%if settings.enable == 1 %}
+                                            <input type="checkbox" class="icheckbox" checked="checked" />
+                                        {%elif settings.enable == 0 %}
+                                            <input type="checkbox" class="icheckbox"/>
+                                        {%else%}
+                                            
+                                        {%endif%}
+                                    </td>
+                                  
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/server/detail/{{server.id}}/" type="button" class="btn btn-primary">Update</a>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Set as default</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {%block js%}

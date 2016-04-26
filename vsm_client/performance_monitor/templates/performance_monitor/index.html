@@ -29,25 +29,25 @@
                 </ul>                            
                 <div class="panel-body tab-content">
                     <div class="tab-pane active" id="tab-osd">
-                        OSD<br/>
+                        {% include "osd_status.html" %}
                     </div>
                     <div class="tab-pane" id="tab-monitor">
-                        Monitor<br/>
+                        {% include "monitor_status.html" %}
                     </div>
                     <div class="tab-pane" id="tab-mds">
-                        MDS<br/>
+                        {% include "mds_status.html" %}
                     </div>
                     <div class="tab-pane" id="tab-pg">
                         PG<br/>
                     </div>
                     <div class="tab-pane" id="tab-pool">
-                        Pool<br/>
+                        {% include "pool_status.html" %}
                     </div>
                     <div class="tab-pane" id="tab-rbd">
-                        RBD<br/>
+                        {% include "rbd_status.html" %}
                     </div>
                     <div class="tab-pane" id="tab-sg">
-                        Storage Group<br/>
+                        {% include "storage_group_status.html" %}
                     </div>
                 </div>
             </div>

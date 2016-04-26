@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block web-title %}
+  【Create EC Pool】 Virtual Storage Management
+{% endblock %}
+
+{% block page-title %}
+    Create EC Pool
+{% endblock %}
+
+{% block page-functions %}
+
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="validate" role="form" class="form-horizontal" action="javascript:alert('Form #validate submited');">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Create EC Pool</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Pool Name</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="validate[required] form-control"/>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Tag</label>
+                            <div class="col-md-6">
+                                <input type="text" class="tagsinput" value="123,456" id="tags1461538691548" style="display: none;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">                                        
+                            <label class="col-md-3 col-xs-12 control-label">Storage Group</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">                                        
+                            <label class="col-md-3 col-xs-12 control-label">Ensure Coded Profile</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">                                        
+                            <label class="col-md-3 col-xs-12 control-label">Ensure Coded Failure Domain</label>
+                            <div class="col-md-6 col-xs-12">
+                                <select class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 col-xs-12 control-label">Pool Quota(GB)</label>
+                            <div class="col-md-6 col-xs-12">
+                                <input type="text" class="validate[required] form-control"/>
+                                <span class="help-block"></span>
+                            </div>
+                            <div class="col-md-2 col-xs-12">
+                                <input type="checkbox" class="icheckbox" checked="checked"  value=""/>disabled
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default">Clear Form</button>                                    
+                        <button class="btn btn-primary pull-right">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="/static/js/plugins/bootstrap-select.js"></script>
+    <script type='text/javascript' src='/static/js/plugins/validationengine/languages/jquery.validationEngine-zh_CN.js'></script>
+    <script type='text/javascript' src='/static/js/plugins/validationengine/jquery.validationEngine.js'></script>        
+    <script type='text/javascript' src='/static/js/plugins/jquery.validate.js'></script>
+    <script type='text/javascript' src='/static/js/plugins/jquery.tagsinput.min.js'></script>
+    <script type="text/javascript" src="/static/js/plugins/icheck.min.js"></script>
+{% endblock %}

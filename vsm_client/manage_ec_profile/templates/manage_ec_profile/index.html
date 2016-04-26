@@ -15,7 +15,68 @@
 
 {% block content %}
     {{ block.super }}
-    EC Profile
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">EC Profile List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="table-action-container" style="">
+                        <a id="btnAddServer" href="/ec_profile/add/" class="btn btn-primary ">Add EC Profile</a>
+                        <button id="btnAddServer" type="button" class="btn btn-primary ">Remove EC Profile</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
+                                <th>Name</th>
+                                <th>Plugin Name</th>
+                                <th>Plugin Path</th>
+                                <th>PG Number</th>
+                                <th>Key Value</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for ec_profile in ec_profile_list %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="icheckbox" />
+                                    </td>
+                                    <td>{{ec_profile.name}}</td>
+                                    <td>{{ec_profile.plugin_name}}</td>
+                                    <td>{{ec_profile.plugin_path}}</td>
+                                    <td>{{ec_profile.pg_number}}</td>
+                                    <td>{{ec_profile.Key_Value}}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/server/detail/{{server.id}}/" type="button" class="btn btn-primary">Detail</a>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#" style="color:red">Remove</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {%block js%}

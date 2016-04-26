@@ -16,7 +16,72 @@
 
 {% block content %}
     {{ block.super }}
-    Manage Role
+    <div class="row">
+        <div class="col-md-12">
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-heading">                                
+                    <h3 class="panel-title">Role List</h3>
+                    <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <!-- <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li> -->
+                    </ul>                                
+                </div>
+                <div class="panel-body">
+                    <div class="table-action-container" style="">
+                        <a id="btnCreateReplicatedPool"  href="/role/create/" class="btn btn-primary ">Create Role</a>
+                         <button id="btnCreateReplicatedPool" type="button" class="btn btn-primary ">Delete Role</button>
+                    </div>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th style="width:100px;">
+                                    <input type="checkbox" class="icheckbox" />
+                                </th>
+                                <th>Name</th>
+                                <th>Group</th>
+                                <th>Enable</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for role in role_list%}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="icheckbox" />
+                                    </td>
+                                    <td>{{role.name}}</td>
+                                    <td>{{role.group}}</td>
+                                    <td>
+                                        {%if role.enable %}
+                                            <input type="checkbox" class="icheckbox" checked="checked" />
+                                        {%else%}
+                                            <input type="checkbox" class="icheckbox" />
+                                        {%endif%}
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/server/detail/{{server.id}}/" type="button" class="btn btn-primary">Update</a>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="caret"></span>
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                          <ul class="dropdown-menu">
+                                            <li><a href="#">Set Privilege</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li><a href="#">Detail</a></li>
+                                            <li><a href="#" style="color:red">Delete</a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>   
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {%block js%}

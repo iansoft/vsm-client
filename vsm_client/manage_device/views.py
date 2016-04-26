@@ -15,7 +15,7 @@ def index(request):
         }
         device_list.append(device);
 
-    menu_list = set_menu("Cluster Management","Device")
+    menu_list = set_menu("Server Management","Device")
     function_item = {"name":"Device List", "url":""}
     breadcrumb_list = set_breadcrumb("Cluster Management","Device",function_item)
     return render(request, 
@@ -24,14 +24,14 @@ def index(request):
 
 
 def add_view(request):
-    menu_list = set_menu("Cluster Management","Device")
+    menu_list = set_menu("Server Management","Device")
     function_item = {"name":"Add Device", "url":"/device/add/"}
     breadcrumb_list = set_breadcrumb("Cluster Management","Device",function_item)
     return render(request, 'manage_device/add.html', {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list})
 
 
 def import_view(request):
-    menu_list = set_menu("Cluster Management","Device")
+    menu_list = set_menu("Server Management","Device")
     function_item = {"name":"Import Device", "url":"/device/import/"}
     breadcrumb_list = set_breadcrumb("Cluster Management","Device",function_item)
     return render(request, 'manage_device/import.html', {"menu_list":menu_list, "breadcrumb_list":breadcrumb_list})
